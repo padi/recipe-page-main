@@ -70,6 +70,7 @@
       font-style: normal;
       color: var(--stone-600);
       line-height: 1.4;
+      letter-spacing: 0;
     }
 
     .recipe-card {
@@ -95,7 +96,31 @@
         color: var(--rose-800);
         font-weight: 600;
       }
+
+      ul > li::before {
+        color: var(--rose-800);
+      }
     }
+      ul {
+        font-size: 1em;
+        list-style-type: none;
+
+        > li {
+          line-height: 1.5;
+          margin-bottom: 1em;
+
+          position:relative; /* relative to bullet */ 
+          padding-left: 25px;
+        }
+
+        > li::before {
+          content: "•";
+          color: var(--stone-900);
+          position: absolute;
+          top: 0;
+          left: 0;
+        }
+      }
 
   </style>
 </head>
@@ -109,7 +134,7 @@
         <p class='desc space-xl'>An easy and quick dish, perfect for any meal. This classic omelette combines beaten eggs cooked
           to perfection, optionally filled with your choice of cheese, vegetables, or meats.</p>
 
-        <div class='prep-details'>
+        <div class='prep-details space-xl'>
           <h3>Preparation time</h3>
 
           <ul>
