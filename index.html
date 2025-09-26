@@ -118,10 +118,12 @@
         align-items: center; /* Vertically centers all children */
         gap: var(--li-marker-space); /* Provides spacing between the bullet and text */
 
-        margin-bottom: 1em;
-        line-height: 1.3em;
       }
     }
+
+    ul li,
+    ol li { line-height: 1.6; }
+    ol li { margin-bottom: 0.5em; }
 
     /* 1. Reset and hide the default numbers */
     ol {
