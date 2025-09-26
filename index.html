@@ -11,33 +11,102 @@
   <link rel="stylesheet" href="./fonts.css">
 
   <style>
+    :root {
+      --white: hsl(0, 0%, 100%);
+
+      --stone-100: hsl(30, 54%, 90%);
+      --stone-150: hsl(30, 18%, 87%);
+      --stone-600: hsl(30, 10%, 34%);
+      --stone-900: hsl(24, 5%, 18%);
+
+      --brown-800: hsl(14, 45%, 36%);
+
+      --rose-800: hsl(332, 51%, 32%);
+      --rose-50: hsl(330, 100%, 98%);
+
+      --space-xs: 0.25rem;
+      --space-sm: 0.5rem;
+      --space-md: 1rem;
+      --space-lg: 1.5rem;
+      --space-xl: 2rem;
+    }
+
+    .space-xs { margin-bottom: var(--space-xs); }
+    .space-sm { margin-bottom: var(--space-sm); }
+    .space-md { margin-bottom: var(--space-md); }
+    .space-lg { margin-bottom: var(--space-lg); }
+    .space-xl { margin-bottom: var(--space-xl); }
+
     *{
       margin:0; padding:0;
       box-sizing: box-border;
     }
 
+    h1, h2, h3, h4, h5, h6 {
+      font-family: "Young Serif", serif;
+      margin-bottom: var(--space-md);
+      line-height: 1.1;
+    }
+
+    h1 {
+      font-size: 2.2em;
+      font-weight: 400;
+      font-style: normal;
+      color: var(--stone-900);
+    }
+
+    h2 {
+      font-size: 1.8em;
+      font-weight: 400;
+      font-style: normal;
+      color: var(--brown-800);
+    }
+
+    body {
+      font-size: 16px;
+      font-family: "Outfit", sans-serif;
+      font-optical-sizing: auto;
+      font-weight: 400;
+      font-style: normal;
+      color: var(--stone-600);
+      line-height: 1.4;
+    }
+
     .recipe-card {
-      .recipename {
-        font-family: "Young Serif", serif;
-        font-weight: 400;
-        font-style: normal;
-      }
       > img.recipepicture {
         width: 100%;
         height: 170px;
         object-fit: cover;
       }
     }
+
+    .recipe-text {
+      padding: 40px 30px;
+    }
+
+    .prep-details {
+      background: var(--rose-50);
+      border-radius: 5px;
+      padding: 25px;
+
+      > h3 {
+        font-size: 1.3em;
+        font-family: "Outfit", sans-serif;
+        color: var(--rose-800);
+        font-weight: 600;
+      }
+    }
+
   </style>
 </head>
   <body>
     <main class="recipe-card">
       <img class="recipepicture" src="./assets/images/image-omelette.jpeg" alt="Picture of Finished Omelette">
 
-      <div class='recipetext'>
-        <h1 class='recipename'>Simple Omelette Recipe</h1>
+      <div class='recipe-text'>
+        <h1 class='name'>Simple Omelette Recipe</h1>
 
-        <p class='desc'>An easy and quick dish, perfect for any meal. This classic omelette combines beaten eggs cooked 
+        <p class='desc space-xl'>An easy and quick dish, perfect for any meal. This classic omelette combines beaten eggs cooked
           to perfection, optionally filled with your choice of cheese, vegetables, or meats.</p>
 
         <div class='prep-details'>
