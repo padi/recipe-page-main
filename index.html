@@ -153,6 +153,37 @@
       font-size: 1em;
     }
 
+    hr {
+      border: none; /* Reset the default browser border */
+      height: 1px;
+      background-color: var(--stone-100); /* Set your desired color */
+      margin: 40px 0; /* Add top and bottom spacing */
+    }
+
+    /* Collapse the table borders into a single border model */
+    table {
+      margin-top: var(--space-md);
+      border-collapse: collapse;
+      width: 100%;
+    }
+
+    /* Style the border on the bottom of all cells */
+    th, td {
+      border-bottom: 1px solid var(--stone-100);
+      padding: 10px 0; /* Add padding for spacing inside the cells */
+    }
+
+    th { font-weight: normal; }
+    td {
+      font-weight: 600;
+      color: var(--brown-800);
+    }
+
+    /* Remove the border from the last row to avoid a superfluous line */
+    tbody tr:last-of-type th,
+    tbody tr:last-of-type td {
+      border-bottom: none;
+    }
   </style>
 </head>
   <body>
@@ -185,14 +216,14 @@
           <li>Optional fillings: cheese, diced vegetables, cooked meats, herbs</li>
         </ul>
 
-        <br>
+        <hr>
 
         <h2>Instructions</h2>
 
         <ol>
           <li>
             <span><b>Beat the eggs:</b> In a bowl, beat the eggs with a pinch of salt and pepper until they are well mixed. 
-            You can add a tablespoon of water or milk for a fluffier texture.</span>
+              You can add a tablespoon of water or milk for a fluffier texture.</span>
           </li>
 
           <li>
@@ -219,7 +250,7 @@
           </li>
         </ol>
 
-        <br>
+        <hr>
 
         <h2>Nutrition</h2>
 
@@ -250,7 +281,8 @@
               <td>22g</td>
             </tr>
           </tbody>
-        </table></div>
+        </table>
+      </div>
     </main>
 
   </body>
