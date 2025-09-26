@@ -101,27 +101,25 @@
         color: var(--rose-800);
       }
     }
-      ul {
-        font-size: 1em;
-        list-style-type: none;
 
-        > li {
-          line-height: 1.5;
-          margin-bottom: 1em;
+    ul {
+      list-style: none; /* Removes default bullets */
+      padding-left: 0;  /* Removes default padding for more control */
 
-          position:relative; /* relative to bullet */ 
-          padding-left: 25px;
-        }
-
-        > li::before {
-          content: "•";
-          color: var(--stone-900);
-          position: absolute;
-          top: 0;
-          left: 0;
-        }
+      > li::before {
+        content: "•"; /* Your bullet content */
+        font-size: 1.3em;
       }
+    }
 
+    li {
+      display: flex; /* Enables flexbox on the list item */
+      align-items: center; /* Vertically centers all children */
+      gap: 30px; /* Provides spacing between the bullet and text */
+
+      margin-bottom: 1em;
+      line-height: 1.3em;
+    }
   </style>
 </head>
   <body>
@@ -138,9 +136,9 @@
           <h3>Preparation time</h3>
 
           <ul>
-            <li><b>Total:</b> Approximately 10 minutes</li>
-            <li><b>Preparation:</b> 5 minutes</li>
-            <li><b>Cooking:</b> 5 minutes</li>
+            <li><span><b>Total:</b> Approximately 10 minutes</span></li>
+            <li><span><b>Preparation:</b> 5 minutes</span></li>
+            <li><span><b>Cooking:</b> 5 minutes</span></li>
           </ul>
         </div>
 
