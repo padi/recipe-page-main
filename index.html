@@ -29,6 +29,8 @@
       --space-md: 1rem;
       --space-lg: 1.5rem;
       --space-xl: 2rem;
+
+      --li-marker-space: 30px;
     }
 
     .space-xs { margin-bottom: var(--space-xs); }
@@ -110,16 +112,45 @@
         content: "•"; /* Your bullet content */
         font-size: 1.3em;
       }
+
+      li {
+        display: flex; /* Enables flexbox on the list item */
+        align-items: center; /* Vertically centers all children */
+        gap: var(--li-marker-space); /* Provides spacing between the bullet and text */
+
+        margin-bottom: 1em;
+        line-height: 1.3em;
+      }
     }
 
-    li {
-      display: flex; /* Enables flexbox on the list item */
-      align-items: center; /* Vertically centers all children */
-      gap: 30px; /* Provides spacing between the bullet and text */
-
-      margin-bottom: 1em;
-      line-height: 1.3em;
+    /* 1. Reset and hide the default numbers */
+    ol {
+      list-style: none; /* Hide default numbers */
+      counter-reset: custom-count; /* Initialize a counter */
+      margin: 0;
+      padding: 0;
     }
+
+    /* 2. Create and style the new numbers */
+    ol li {
+      counter-increment: custom-count; /* Increment the counter for each li */
+      position: relative;
+      padding-left: var(--li-marker-space);
+    }
+
+    ol li::before {
+      content: counter(custom-count) "."; /* Display the current counter value */
+
+      position: absolute;
+      top:0; left:0;
+
+      /* Your custom styles for the number */
+      color: var(--brown-800);
+      font-family: Outfit, sans-serif;
+      font-weight: bold;
+      font-size: 1em;
+    }
+
   </style>
 </head>
   <body>
@@ -157,21 +188,33 @@
         <h2>Instructions</h2>
 
         <ol>
-          <li>Beat the eggs: In a bowl, beat the eggs with a pinch of salt and pepper until they are well mixed. 
-            You can add a tablespoon of water or milk for a fluffier texture.</li>
+          <li>
+            <span><b>Beat the eggs:</b> In a bowl, beat the eggs with a pinch of salt and pepper until they are well mixed. 
+            You can add a tablespoon of water or milk for a fluffier texture.</span>
+          </li>
 
-          <li>Heat the pan: Place a non-stick frying pan over medium heat and add butter or oil.</li>
+          <li>
+            <span><b>Heat the pan:</b> Place a non-stick frying pan over medium heat and add butter or oil.</span>
+          </li>
 
-          <li>Cook the omelette: Once the butter is melted and bubbling, pour in the eggs. Tilt the pan to ensure 
-            the eggs evenly coat the surface.</li>
+          <li>
+            <span><b>Cook the omelette:</b> Once the butter is melted and bubbling, pour in the eggs. Tilt the pan to ensure 
+            the eggs evenly coat the surface.</span>
+          </li>
 
-          <li>Add fillings (optional): When the eggs begin to set at the edges but are still slightly runny in the 
-            middle, sprinkle your chosen fillings over one half of the omelette.</li>
+          <li>
+            <span><b>Add fillings (optional):</b> When the eggs begin to set at the edges but are still slightly runny in the 
+            middle, sprinkle your chosen fillings over one half of the omelette.</span>
+          </li>
 
-          <li>Fold and serve: As the omelette continues to cook, carefully lift one edge and fold it over the 
-            fillings. Let it cook for another minute, then slide it onto a plate.</li>
+          <li>
+            <span><b>Fold and serve:</b> As the omelette continues to cook, carefully lift one edge and fold it over the 
+            fillings. Let it cook for another minute, then slide it onto a plate.</span>
+          </li>
 
-          <li>Enjoy: Serve hot, with additional salt and pepper if needed.</li>
+          <li>
+            <span><b>Enjoy:</b> Serve hot, with additional salt and pepper if needed.</span>
+          </li>
         </ol>
 
         <br>
